@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED1123DDA048006438DA /* AppDelegate.swift */; };
-		5C9EED1623DDA048006438DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED1523DDA048006438DA /* ViewController.swift */; };
 		5C9EED1B23DDA04C006438DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9EED1A23DDA04C006438DA /* Assets.xcassets */; };
 		5C9EED1E23DDA04C006438DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9EED1C23DDA04C006438DA /* LaunchScreen.storyboard */; };
 		5C9EED2D23DDAD0C006438DA /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9EED2C23DDAD0C006438DA /* VKSdkFramework.framework */; };
+		5C9EED3323DDB6FE006438DA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3223DDB6FE006438DA /* AuthService.swift */; };
+		5C9EED3723DDBAD7006438DA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3623DDBAD7006438DA /* AuthViewController.swift */; };
+		5C9EED3A23DDC0CE006438DA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3923DDC0CE006438DA /* Colors.swift */; };
+		5CDB8DE423DDD49A000CD4DC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB8DE323DDD49A000CD4DC /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C9EED0E23DDA048006438DA /* VK News Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK News Feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9EED1123DDA048006438DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C9EED1523DDA048006438DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5C9EED1A23DDA04C006438DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C9EED1D23DDA04C006438DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C9EED1F23DDA04C006438DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C9EED2C23DDAD0C006438DA /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
+		5C9EED3223DDB6FE006438DA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		5C9EED3623DDBAD7006438DA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		5C9EED3923DDC0CE006438DA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5CDB8DE323DDD49A000CD4DC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				5C9EED3123DDB1B6006438DA /* Application */,
-				5C9EED1523DDA048006438DA /* ViewController.swift */,
+				5C9EED3423DDB70F006438DA /* Services */,
+				5C9EED3523DDBA53006438DA /* Auth */,
+				5CDB8DE523DDD79D000CD4DC /* FeedModule */,
 				5C9EED2E23DDB036006438DA /* Supporting files */,
+				5C9EED3823DDC0C0006438DA /* Enums */,
 			);
 			path = "VK News Feed";
 			sourceTree = "<group>";
@@ -87,6 +96,38 @@
 				5C9EED1123DDA048006438DA /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		5C9EED3423DDB70F006438DA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5C9EED3223DDB6FE006438DA /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5C9EED3523DDBA53006438DA /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5C9EED3623DDBAD7006438DA /* AuthViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		5C9EED3823DDC0C0006438DA /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				5C9EED3923DDC0CE006438DA /* Colors.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		5CDB8DE523DDD79D000CD4DC /* FeedModule */ = {
+			isa = PBXGroup;
+			children = (
+				5CDB8DE323DDD49A000CD4DC /* FeedViewController.swift */,
+			);
+			path = FeedModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C9EED1623DDA048006438DA /* ViewController.swift in Sources */,
+				5C9EED3323DDB6FE006438DA /* AuthService.swift in Sources */,
+				5C9EED3A23DDC0CE006438DA /* Colors.swift in Sources */,
+				5CDB8DE423DDD49A000CD4DC /* FeedViewController.swift in Sources */,
+				5C9EED3723DDBAD7006438DA /* AuthViewController.swift in Sources */,
 				5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

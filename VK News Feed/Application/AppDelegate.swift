@@ -13,12 +13,41 @@ import VKSdkFramework
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	var window: UIWindow?
+	let authService = AuthService()
+	
+	static func shared() -> AppDelegate {
+		return UIApplication.shared.delegate as! AppDelegate
+	}
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+		authService.delegate = self
 		self.window = UIWindow(frame: UIScreen.main.bounds)
-		self.window?.rootViewController = ViewController()
+		self.window?.rootViewController = AuthViewController()
 		self.window?.makeKeyAndVisible()
 		return true
+	}
+	
+	func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+		VKSdk.processOpen(url, fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
+		return true
+	}
+}
+
+extension AppDelegate: AuthServiceDelegate {
+	func authServiceShouldShow(_ viewController: UIViewController) {
+		print(#function)
+		window?.rootViewController?.present(viewController, animated: true, completion: nil)
+	}
+	
+	func authServiceSignIn() {
+		print(#function)
+		let feedVC = FeedViewController()
+		let navigationVC = UINavigationController(rootViewController: feedVC)
+		window?.rootViewController = navigationVC
+	}
+	
+	func authServiceDidSignInFail() {
+		print(#function)
 	}
 }
 
