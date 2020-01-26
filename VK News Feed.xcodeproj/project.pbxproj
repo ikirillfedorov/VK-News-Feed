@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED1123DDA048006438DA /* AppDelegate.swift */; };
-		5C9EED1423DDA048006438DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED1323DDA048006438DA /* SceneDelegate.swift */; };
 		5C9EED1623DDA048006438DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED1523DDA048006438DA /* ViewController.swift */; };
-		5C9EED1923DDA048006438DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9EED1723DDA048006438DA /* Main.storyboard */; };
 		5C9EED1B23DDA04C006438DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9EED1A23DDA04C006438DA /* Assets.xcassets */; };
 		5C9EED1E23DDA04C006438DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9EED1C23DDA04C006438DA /* LaunchScreen.storyboard */; };
 		5C9EED2D23DDAD0C006438DA /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9EED2C23DDAD0C006438DA /* VKSdkFramework.framework */; };
@@ -19,9 +17,7 @@
 /* Begin PBXFileReference section */
 		5C9EED0E23DDA048006438DA /* VK News Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK News Feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9EED1123DDA048006438DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C9EED1323DDA048006438DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5C9EED1523DDA048006438DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5C9EED1823DDA048006438DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C9EED1A23DDA04C006438DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C9EED1D23DDA04C006438DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C9EED1F23DDA04C006438DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,13 +56,9 @@
 		5C9EED1023DDA048006438DA /* VK News Feed */ = {
 			isa = PBXGroup;
 			children = (
-				5C9EED1123DDA048006438DA /* AppDelegate.swift */,
-				5C9EED1323DDA048006438DA /* SceneDelegate.swift */,
+				5C9EED3123DDB1B6006438DA /* Application */,
 				5C9EED1523DDA048006438DA /* ViewController.swift */,
-				5C9EED1723DDA048006438DA /* Main.storyboard */,
-				5C9EED1A23DDA04C006438DA /* Assets.xcassets */,
-				5C9EED1C23DDA04C006438DA /* LaunchScreen.storyboard */,
-				5C9EED1F23DDA04C006438DA /* Info.plist */,
+				5C9EED2E23DDB036006438DA /* Supporting files */,
 			);
 			path = "VK News Feed";
 			sourceTree = "<group>";
@@ -77,6 +69,24 @@
 				5C9EED2C23DDAD0C006438DA /* VKSdkFramework.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C9EED2E23DDB036006438DA /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				5C9EED1A23DDA04C006438DA /* Assets.xcassets */,
+				5C9EED1C23DDA04C006438DA /* LaunchScreen.storyboard */,
+				5C9EED1F23DDA04C006438DA /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		5C9EED3123DDB1B6006438DA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5C9EED1123DDA048006438DA /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +150,6 @@
 			files = (
 				5C9EED1E23DDA04C006438DA /* LaunchScreen.storyboard in Resources */,
 				5C9EED1B23DDA04C006438DA /* Assets.xcassets in Resources */,
-				5C9EED1923DDA048006438DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,21 +184,12 @@
 			files = (
 				5C9EED1623DDA048006438DA /* ViewController.swift in Sources */,
 				5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */,
-				5C9EED1423DDA048006438DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5C9EED1723DDA048006438DA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C9EED1823DDA048006438DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5C9EED1C23DDA04C006438DA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -325,7 +325,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "VK News Feed/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/VK News Feed/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -348,7 +348,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "VK News Feed/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/VK News Feed/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
