@@ -13,6 +13,7 @@
 		5C9EED1923DDA048006438DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9EED1723DDA048006438DA /* Main.storyboard */; };
 		5C9EED1B23DDA04C006438DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9EED1A23DDA04C006438DA /* Assets.xcassets */; };
 		5C9EED1E23DDA04C006438DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9EED1C23DDA04C006438DA /* LaunchScreen.storyboard */; };
+		5C9EED2D23DDAD0C006438DA /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9EED2C23DDAD0C006438DA /* VKSdkFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5C9EED1A23DDA04C006438DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C9EED1D23DDA04C006438DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C9EED1F23DDA04C006438DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C9EED2C23DDAD0C006438DA /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C9EED2D23DDAD0C006438DA /* VKSdkFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 			children = (
 				5C9EED1023DDA048006438DA /* VK News Feed */,
 				5C9EED0F23DDA048006438DA /* Products */,
+				5C9EED2523DDA79A006438DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +71,14 @@
 			path = "VK News Feed";
 			sourceTree = "<group>";
 		};
+		5C9EED2523DDA79A006438DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C9EED2C23DDAD0C006438DA /* VKSdkFramework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +89,7 @@
 				5C9EED0A23DDA048006438DA /* Sources */,
 				5C9EED0B23DDA048006438DA /* Frameworks */,
 				5C9EED0C23DDA048006438DA /* Resources */,
+				5C9EED2723DDA7F9006438DA /* VKSdkFramework */,
 			);
 			buildRules = (
 			);
@@ -132,6 +145,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C9EED2723DDA7F9006438DA /* VKSdkFramework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/VKSdkFramework.framework",
+			);
+			name = VKSdkFramework;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5C9EED0A23DDA048006438DA /* Sources */ = {
@@ -286,7 +321,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4K2VL2BQJM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "VK News Feed/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +344,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4K2VL2BQJM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "VK News Feed/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
