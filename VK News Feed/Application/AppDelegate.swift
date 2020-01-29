@@ -35,12 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: AuthServiceDelegate {
 	func authServiceShouldShow(_ viewController: UIViewController) {
-		print(#function)
 		window?.rootViewController?.present(viewController, animated: true, completion: nil)
 	}
 	
 	func authServiceSignIn() {
-		print(#function)
 		let feedVC = FeedViewController()
 		let navigationVC = UINavigationController(rootViewController: feedVC)
 		window?.rootViewController = navigationVC

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C67DE6423E2081900380E24 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67DE6323E2081900380E24 /* NetworkService.swift */; };
+		5C67DE6623E2088C00380E24 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67DE6523E2088C00380E24 /* API.swift */; };
 		5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED1123DDA048006438DA /* AppDelegate.swift */; };
 		5C9EED1B23DDA04C006438DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9EED1A23DDA04C006438DA /* Assets.xcassets */; };
 		5C9EED1E23DDA04C006438DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9EED1C23DDA04C006438DA /* LaunchScreen.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C67DE6323E2081900380E24 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5C67DE6523E2088C00380E24 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5C9EED0E23DDA048006438DA /* VK News Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK News Feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9EED1123DDA048006438DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C9EED1A23DDA04C006438DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				5C9EED3223DDB6FE006438DA /* AuthService.swift */,
+				5C67DE6323E2081900380E24 /* NetworkService.swift */,
+				5C67DE6523E2088C00380E24 /* API.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -227,7 +233,9 @@
 				5C9EED3A23DDC0CE006438DA /* Colors.swift in Sources */,
 				5CDB8DE423DDD49A000CD4DC /* FeedViewController.swift in Sources */,
 				5C9EED3723DDBAD7006438DA /* AuthViewController.swift in Sources */,
+				5C67DE6423E2081900380E24 /* NetworkService.swift in Sources */,
 				5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */,
+				5C67DE6623E2088C00380E24 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
