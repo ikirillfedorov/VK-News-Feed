@@ -8,6 +8,9 @@
 
 import Foundation
 
+protocol Networking {
+	func createRequest(path: String, params: [String: String], completion: @escaping (Data?, Error?) -> ()) //переделатт на result
+}
 
 final class NetworkService {
 	
@@ -18,20 +21,41 @@ final class NetworkService {
 	}
 	
 	func getFeed() {
-		var components = URLComponents()
-		//https://api.vk.com/method/users.get?user_ids=210700286&fields=bdate&access_token=533bacf01e11f55b536a565b57531ac114461ae8736d6506a3&v=5.103
-
-		guard let token = authService.token else { return }
 		let params = ["filters" : "post, photos"]
-		var allParams = params
-		allParams["access_token"] = token
-		allParams["v"] = API.version
+		createRequest(path: API.newsFeed, params: params) { (data, error) in
+			print(data)
+			print(error)
+		}
+	}
+	
+	private func getUrl(from path: String, params: [String: String]) -> URL? {
+		var components = URLComponents()
 		components.scheme = API.scheme
 		components.host = API.host
 		components.path = API.newsFeed
-		components.queryItems = allParams.map { URLQueryItem(name: $0, value: $1) }
-		
-		let url = components.url
+		components.queryItems = params.map { URLQueryItem(name: $0, value: $1) }
+		return components.url
+	}
+	
+	private func createDataTask(from request: URLRequest, completion: @escaping (Data?, Error?) -> ()) -> URLSessionDataTask {
+		return URLSession.shared.dataTask(with: request) { (data, response, error) in
+			DispatchQueue.main.async {
+				completion(data, error)
+			}
+		}
+	}
+}
+
+extension NetworkService: Networking {
+	func createRequest(path: String, params: [String: String], completion: @escaping (Data?, Error?) -> ()) {
+		guard let token = authService.token else { return }
+		var allParams = params
+		allParams["access_token"] = token
+		allParams["v"] = API.version
+		guard let url = getUrl(from: path, params: allParams) else { return }
+		let request = URLRequest(url: url)
+		let task = createDataTask(from: request, completion: completion)
+		task.resume()
 		print(url)
 	}
 }
