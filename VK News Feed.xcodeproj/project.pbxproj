@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0B1A9123E3D7840053AC14 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0B1A9023E3D7840053AC14 /* FeedResponse.swift */; };
+		5C0B1A9323E3DA380053AC14 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0B1A9223E3DA380053AC14 /* NetworkDataFetcher.swift */; };
 		5C67DE6423E2081900380E24 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67DE6323E2081900380E24 /* NetworkService.swift */; };
 		5C67DE6623E2088C00380E24 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67DE6523E2088C00380E24 /* API.swift */; };
 		5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED1123DDA048006438DA /* AppDelegate.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C0B1A9023E3D7840053AC14 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		5C0B1A9223E3DA380053AC14 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		5C67DE6323E2081900380E24 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5C67DE6523E2088C00380E24 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5C9EED0E23DDA048006438DA /* VK News Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK News Feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C0B1A8F23E3D7690053AC14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C0B1A9023E3D7840053AC14 /* FeedResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5C9EED0523DDA048006438DA = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +117,10 @@
 		5C9EED3423DDB70F006438DA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5C0B1A8F23E3D7690053AC14 /* Models */,
 				5C9EED3223DDB6FE006438DA /* AuthService.swift */,
 				5C67DE6323E2081900380E24 /* NetworkService.swift */,
+				5C0B1A9223E3DA380053AC14 /* NetworkDataFetcher.swift */,
 				5C67DE6523E2088C00380E24 /* API.swift */,
 			);
 			path = Services;
@@ -229,11 +243,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C0B1A9123E3D7840053AC14 /* FeedResponse.swift in Sources */,
 				5C9EED3323DDB6FE006438DA /* AuthService.swift in Sources */,
 				5C9EED3A23DDC0CE006438DA /* Colors.swift in Sources */,
 				5CDB8DE423DDD49A000CD4DC /* FeedViewController.swift in Sources */,
 				5C9EED3723DDBAD7006438DA /* AuthViewController.swift in Sources */,
 				5C67DE6423E2081900380E24 /* NetworkService.swift in Sources */,
+				5C0B1A9323E3DA380053AC14 /* NetworkDataFetcher.swift in Sources */,
 				5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */,
 				5C67DE6623E2088C00380E24 /* API.swift in Sources */,
 			);

@@ -20,14 +20,6 @@ final class NetworkService {
 		self.authService = authService
 	}
 	
-	func getFeed() {
-		let params = ["filters" : "post, photos"]
-		createRequest(path: API.newsFeed, params: params) { (data, error) in
-			print(data)
-			print(error)
-		}
-	}
-	
 	private func getUrl(from path: String, params: [String: String]) -> URL? {
 		var components = URLComponents()
 		components.scheme = API.scheme
