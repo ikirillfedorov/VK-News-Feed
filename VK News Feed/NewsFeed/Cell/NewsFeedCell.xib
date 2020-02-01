@@ -40,10 +40,10 @@
                             </label>
                         </subviews>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdR-L0-Fx8">
-                        <rect key="frame" x="10" y="55" width="395" height="150"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdR-L0-Fx8">
+                        <rect key="frame" x="10" y="55" width="395" height="103"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -121,6 +121,10 @@
                             </view>
                         </subviews>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdi-tE-p3o" customClass="WebImageView" customModule="VK_News_Feed" customModuleProvider="target">
+                        <rect key="frame" x="10" y="166" width="395" height="39"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -129,6 +133,7 @@
                 <outlet property="iconImageView" destination="OIx-u2-4t7" id="FrZ-4m-0dS"/>
                 <outlet property="likesLabel" destination="vTP-0x-BHS" id="i3u-NU-nhZ"/>
                 <outlet property="nameLabel" destination="eUZ-eM-0ts" id="Mcn-XW-GZy"/>
+                <outlet property="postImageView" destination="fdi-tE-p3o" id="yyh-Da-iIC"/>
                 <outlet property="postLabel" destination="NdR-L0-Fx8" id="xnP-7M-4HY"/>
                 <outlet property="sharesLabel" destination="3zW-NO-r92" id="Ypb-YE-51E"/>
                 <outlet property="viewsLabel" destination="bwD-gd-N1y" id="EwS-NN-ptV"/>
