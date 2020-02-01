@@ -27,20 +27,20 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUZ-eM-0ts">
                                 <rect key="frame" x="44" y="2" width="343" height="15"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImV-5O-JI3">
                                 <rect key="frame" x="44" y="19" width="343" height="15"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.50588235294117645" green="0.5490196078431373" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdR-L0-Fx8">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdR-L0-Fx8">
                         <rect key="frame" x="10" y="55" width="395" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -124,14 +124,14 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="commentsLabel" destination="JyH-ya-urd" id="8qb-Nt-hPt"/>
+                <outlet property="commentsLabel" destination="jA4-XM-7QZ" id="rhI-eG-XRg"/>
                 <outlet property="dateLabel" destination="ImV-5O-JI3" id="4WI-nY-S92"/>
                 <outlet property="iconImageView" destination="OIx-u2-4t7" id="FrZ-4m-0dS"/>
-                <outlet property="likesLabel" destination="OBN-9A-cdB" id="L3m-j8-h40"/>
+                <outlet property="likesLabel" destination="vTP-0x-BHS" id="i3u-NU-nhZ"/>
                 <outlet property="nameLabel" destination="eUZ-eM-0ts" id="Mcn-XW-GZy"/>
                 <outlet property="postLabel" destination="NdR-L0-Fx8" id="xnP-7M-4HY"/>
-                <outlet property="sharesLabel" destination="BRB-lb-0fg" id="zg7-1Q-I0B"/>
-                <outlet property="viewsLabel" destination="wSo-Ne-q32" id="6Sd-gH-ZRK"/>
+                <outlet property="sharesLabel" destination="3zW-NO-r92" id="Ypb-YE-51E"/>
+                <outlet property="viewsLabel" destination="bwD-gd-N1y" id="EwS-NN-ptV"/>
             </connections>
             <point key="canvasLocation" x="-33.333333333333336" y="77.34375"/>
         </tableViewCell>

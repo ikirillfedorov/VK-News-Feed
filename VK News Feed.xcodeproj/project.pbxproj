@@ -25,7 +25,6 @@
 		5C9EED3323DDB6FE006438DA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3223DDB6FE006438DA /* AuthService.swift */; };
 		5C9EED3723DDBAD7006438DA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3623DDBAD7006438DA /* AuthViewController.swift */; };
 		5C9EED3A23DDC0CE006438DA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3923DDC0CE006438DA /* Colors.swift */; };
-		5CDB8DE423DDD49A000CD4DC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB8DE323DDD49A000CD4DC /* FeedViewController.swift */; };
 		5CDCA50D23E573F200999661 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCA50B23E573F200999661 /* NewsFeedCell.swift */; };
 		5CDCA50E23E573F200999661 /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDCA50C23E573F200999661 /* NewsFeedCell.xib */; };
 /* End PBXBuildFile section */
@@ -51,7 +50,6 @@
 		5C9EED3223DDB6FE006438DA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5C9EED3623DDBAD7006438DA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		5C9EED3923DDC0CE006438DA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		5CDB8DE323DDD49A000CD4DC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		5CDCA50B23E573F200999661 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
 		5CDCA50C23E573F200999661 /* NewsFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +121,6 @@
 				5C9EED3423DDB70F006438DA /* Services */,
 				5C9EED3523DDBA53006438DA /* Auth */,
 				5C0B1A9423E3E4A40053AC14 /* NewsFeed */,
-				5CDB8DE523DDD79D000CD4DC /* FeedViewController */,
 				5C9EED2E23DDB036006438DA /* Supporting files */,
 				5C9EED3823DDC0C0006438DA /* Enums */,
 			);
@@ -182,14 +179,6 @@
 				5C9EED3923DDC0CE006438DA /* Colors.swift */,
 			);
 			path = Enums;
-			sourceTree = "<group>";
-		};
-		5CDB8DE523DDD79D000CD4DC /* FeedViewController */ = {
-			isa = PBXGroup;
-			children = (
-				5CDB8DE323DDD49A000CD4DC /* FeedViewController.swift */,
-			);
-			path = FeedViewController;
 			sourceTree = "<group>";
 		};
 		5CDCA50A23E573BD00999661 /* Cell */ = {
@@ -300,7 +289,6 @@
 				5C9EED3323DDB6FE006438DA /* AuthService.swift in Sources */,
 				5C9EED3A23DDC0CE006438DA /* Colors.swift in Sources */,
 				5C0B1AA123E3E51C0053AC14 /* NewsFeedInteractor.swift in Sources */,
-				5CDB8DE423DDD49A000CD4DC /* FeedViewController.swift in Sources */,
 				5C9EED3723DDBAD7006438DA /* AuthViewController.swift in Sources */,
 				5C67DE6423E2081900380E24 /* NetworkService.swift in Sources */,
 				5C0B1A9323E3DA380053AC14 /* NetworkDataFetcher.swift in Sources */,

@@ -16,8 +16,9 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 	
 	var interactor: NewsFeedBusinessLogic?
 	var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
-	let feedSceneView = FeedSceneView()
 	
+	private let feedSceneView = FeedSceneView()
+	private var feedViewModel = FeedViewModel(cells: [])
 	
 	// MARK: Setup
 	private func setup() {
@@ -48,29 +49,29 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 		self.feedSceneView.tableView.register(UINib(nibName: "NewsFeedCell", bundle: nil),
 											  forCellReuseIdentifier: NewsFeedCell.reuseId)
 		setup()
+		
+		interactor?.makeRequest(request: .getNewsFeed)
 	}
 	
 	func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
 		switch viewModel {
-		case .some:
-			print(".some viewController")
-		case .displayNewsFeed:
-			print(".displayNewsFeed viewController")
+		case .displayNewsFeed(let feedViewModel):
+			self.feedViewModel = feedViewModel
+			self.feedSceneView.tableView.reloadData()
 		}
 	}
 }
 
 extension NewsFeedViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 5
+		return feedViewModel.cells.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedCell.reuseId, for: indexPath)
 			as? NewsFeedCell else { return UITableViewCell(style: .default, reuseIdentifier: "cell") }
-		
-//		cell.textLabel?.text = "section = \(indexPath.section), row = \(indexPath.row)"
-//		cell.detailTextLabel?.text = "detailTextLabel"
+		let cellViewModel = feedViewModel.cells[indexPath.row]
+		cell.set(viewModel: cellViewModel)
 		return cell
 	}
 	
@@ -80,8 +81,4 @@ extension NewsFeedViewController: UITableViewDataSource {
 }
 
 extension NewsFeedViewController: UITableViewDelegate {
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		tableView.deselectRow(at: indexPath, animated: true)
-		interactor?.makeRequest(request: .getFeed)
-	}
 }
