@@ -30,6 +30,7 @@ protocol FeedCellPhotoAttachmentViewModel {
 class NewsFeedCell: UITableViewCell {
 
 	static let reuseId = "NewsFeedCell"
+	@IBOutlet weak var cardView: UIView!
 	
 	@IBOutlet weak var iconImageView: WebImageView!
 	@IBOutlet weak var nameLabel: UILabel!
@@ -45,6 +46,10 @@ class NewsFeedCell: UITableViewCell {
         super.awakeFromNib()
 		iconImageView.layer.cornerRadius = iconImageView.frame.height / 2
 		iconImageView.clipsToBounds = true
+		cardView.layer.cornerRadius = 10
+		cardView.clipsToBounds = true
+		backgroundColor = .clear
+		selectionStyle = .none
     }
 	
 	func set(viewModel: FeedCellViewModel) {

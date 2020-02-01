@@ -46,9 +46,14 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 		super.viewDidLoad()
 		self.feedSceneView.tableView.delegate = self
 		self.feedSceneView.tableView.dataSource = self
+		self.feedSceneView.tableView.separatorStyle = .none
+		self.feedSceneView.tableView.backgroundColor = .clear
+		self.feedSceneView.backgroundColor = Colors.mainStyle
+
 		self.feedSceneView.tableView.register(UINib(nibName: "NewsFeedCell", bundle: nil),
 											  forCellReuseIdentifier: NewsFeedCell.reuseId)
 		setup()
+		
 		
 		interactor?.makeRequest(request: .getNewsFeed)
 	}

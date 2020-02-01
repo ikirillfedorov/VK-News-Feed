@@ -48,6 +48,5 @@ extension NetworkService: Networking {
 		let request = URLRequest(url: url)
 		let task = createDataTask(from: request, completion: completion)
 		task.resume()
-		print(url)
 	}
 }
