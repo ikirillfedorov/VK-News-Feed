@@ -25,6 +25,7 @@
 		5C9EED3323DDB6FE006438DA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3223DDB6FE006438DA /* AuthService.swift */; };
 		5C9EED3723DDBAD7006438DA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3623DDBAD7006438DA /* AuthViewController.swift */; };
 		5C9EED3A23DDC0CE006438DA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3923DDC0CE006438DA /* Colors.swift */; };
+		5CD5766323E599E3007F68A7 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5766223E599E3007F68A7 /* WebImageView.swift */; };
 		5CDCA50D23E573F200999661 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCA50B23E573F200999661 /* NewsFeedCell.swift */; };
 		5CDCA50E23E573F200999661 /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDCA50C23E573F200999661 /* NewsFeedCell.xib */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		5C9EED3223DDB6FE006438DA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5C9EED3623DDBAD7006438DA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		5C9EED3923DDC0CE006438DA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5CD5766223E599E3007F68A7 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		5CDCA50B23E573F200999661 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
 		5CDCA50C23E573F200999661 /* NewsFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				5C9EED3423DDB70F006438DA /* Services */,
 				5C9EED3523DDBA53006438DA /* Auth */,
 				5C0B1A9423E3E4A40053AC14 /* NewsFeed */,
+				5CD5766123E599CE007F68A7 /* Helpers */,
 				5C9EED2E23DDB036006438DA /* Supporting files */,
 				5C9EED3823DDC0C0006438DA /* Enums */,
 			);
@@ -179,6 +182,14 @@
 				5C9EED3923DDC0CE006438DA /* Colors.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		5CD5766123E599CE007F68A7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5CD5766223E599E3007F68A7 /* WebImageView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		5CDCA50A23E573BD00999661 /* Cell */ = {
@@ -295,6 +306,7 @@
 				5C0B1A9D23E3E51C0053AC14 /* NewsFeedWorker.swift in Sources */,
 				5C0B1A9E23E3E51C0053AC14 /* NewsFeedRouter.swift in Sources */,
 				5C0B1AA423E566C00053AC14 /* FeedSceneView.swift in Sources */,
+				5CD5766323E599E3007F68A7 /* WebImageView.swift in Sources */,
 				5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */,
 				5C67DE6623E2088C00380E24 /* API.swift in Sources */,
 				5C0B1A9F23E3E51C0053AC14 /* NewsFeedModels.swift in Sources */,
