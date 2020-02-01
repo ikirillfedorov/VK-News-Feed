@@ -39,7 +39,7 @@ extension AppDelegate: AuthServiceDelegate {
 	}
 	
 	func authServiceSignIn() {
-		let feedVC = FeedViewController()
+		let feedVC = NewsFeedViewController()
 		let navigationVC = UINavigationController(rootViewController: feedVC)
 		window?.rootViewController = navigationVC
 	}
