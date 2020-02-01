@@ -26,6 +26,8 @@
 		5C9EED3723DDBAD7006438DA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3623DDBAD7006438DA /* AuthViewController.swift */; };
 		5C9EED3A23DDC0CE006438DA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED3923DDC0CE006438DA /* Colors.swift */; };
 		5CDB8DE423DDD49A000CD4DC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDB8DE323DDD49A000CD4DC /* FeedViewController.swift */; };
+		5CDCA50D23E573F200999661 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCA50B23E573F200999661 /* NewsFeedCell.swift */; };
+		5CDCA50E23E573F200999661 /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDCA50C23E573F200999661 /* NewsFeedCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		5C9EED3623DDBAD7006438DA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		5C9EED3923DDC0CE006438DA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5CDB8DE323DDD49A000CD4DC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		5CDCA50B23E573F200999661 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
+		5CDCA50C23E573F200999661 /* NewsFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		5C0B1A9423E3E4A40053AC14 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				5CDCA50A23E573BD00999661 /* Cell */,
 				5C0B1AA523E566C30053AC14 /* View */,
 				5C0B1A9923E3E51C0053AC14 /* NewsFeedViewController.swift */,
 				5C0B1A9A23E3E51C0053AC14 /* NewsFeedInteractor.swift */,
@@ -187,6 +192,15 @@
 			path = FeedViewController;
 			sourceTree = "<group>";
 		};
+		5CDCA50A23E573BD00999661 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5CDCA50B23E573F200999661 /* NewsFeedCell.swift */,
+				5CDCA50C23E573F200999661 /* NewsFeedCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,6 +262,7 @@
 			files = (
 				5C9EED1E23DDA04C006438DA /* LaunchScreen.storyboard in Resources */,
 				5C9EED1B23DDA04C006438DA /* Assets.xcassets in Resources */,
+				5CDCA50E23E573F200999661 /* NewsFeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +310,7 @@
 				5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */,
 				5C67DE6623E2088C00380E24 /* API.swift in Sources */,
 				5C0B1A9F23E3E51C0053AC14 /* NewsFeedModels.swift in Sources */,
+				5CDCA50D23E573F200999661 /* NewsFeedCell.swift in Sources */,
 				5C0B1AA023E3E51C0053AC14 /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

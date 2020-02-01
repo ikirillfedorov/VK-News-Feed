@@ -45,6 +45,8 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 		super.viewDidLoad()
 		self.feedSceneView.tableView.delegate = self
 		self.feedSceneView.tableView.dataSource = self
+		self.feedSceneView.tableView.register(UINib(nibName: "NewsFeedCell", bundle: nil),
+											  forCellReuseIdentifier: NewsFeedCell.reuseId)
 		setup()
 	}
 	
@@ -64,12 +66,16 @@ extension NewsFeedViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-			?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedCell.reuseId, for: indexPath)
+			as? NewsFeedCell else { return UITableViewCell(style: .default, reuseIdentifier: "cell") }
 		
-		cell.textLabel?.text = "section = \(indexPath.section), row = \(indexPath.row)"
-		cell.detailTextLabel?.text = "detailTextLabel"
+//		cell.textLabel?.text = "section = \(indexPath.section), row = \(indexPath.row)"
+//		cell.detailTextLabel?.text = "detailTextLabel"
 		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 212
 	}
 }
 
