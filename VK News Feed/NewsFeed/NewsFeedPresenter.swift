@@ -13,7 +13,10 @@ protocol NewsFeedPresentationLogic {
 }
 
 class NewsFeedPresenter: NewsFeedPresentationLogic {
+	
 	weak var viewController: NewsFeedDisplayLogic?
+	var cellLayoutCalculator: FeedCellLayoutCalculatorProtocol = FeedCellLayoutCalculator()
+	
 	let dateFormatter: DateFormatter = {
 		let dateFormatter = DateFormatter()
 		dateFormatter.locale = Locale(identifier: "ru_RU")
@@ -32,8 +35,10 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
 	
 	private func makeCellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group]) -> FeedViewModel.Cell {
 		let profile = selectProfile(for: feedItem.sourceId, profiles: profiles, groups: groups)
+		let photoAttachment = self.photoAttachment(feedItem: feedItem)
 		let date = Date(timeIntervalSince1970: feedItem.date)
 		let dateTitle = dateFormatter.string(from: date)
+		let sizes = cellLayoutCalculator.getCellSizes(postText: feedItem.text, photoAttachment: photoAttachment)
 		return FeedViewModel.Cell(iconUrlString: profile.photo,
 								  name: profile.name,
 								  date: dateTitle,
@@ -42,8 +47,8 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
 								  comments: String(feedItem.comments?.count ?? 0),
 								  shares: String(feedItem.reposts?.count ?? 0),
 								  views: String(feedItem.views?.count ?? 0),
-								  photoAttachment: photoAttachment(feedItem: feedItem)
-		)
+								  photoAttachment: photoAttachment,
+								  sizes: sizes)
 	}
 	
 	private func selectProfile(for sourcseId: Int, profiles: [Profile], groups: [Group]) -> ProfileRepresenatable {
