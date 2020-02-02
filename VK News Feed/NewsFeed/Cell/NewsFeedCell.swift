@@ -51,6 +51,11 @@ class NewsFeedCell: UITableViewCell {
 	@IBOutlet weak var postImageView: WebImageView!
 	@IBOutlet weak var bottomView: UIView!
 	
+	override func prepareForReuse() {
+		iconImageView.setImage(fromUrl: nil)
+		postImageView.setImage(fromUrl: nil)
+	}
+	
 	override func awakeFromNib() {
         super.awakeFromNib()
 		iconImageView.layer.cornerRadius = iconImageView.frame.height / 2
