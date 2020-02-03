@@ -17,7 +17,7 @@ struct Sizes: FeedCellSizes {
 }
 
 protocol FeedCellLayoutCalculatorProtocol {
-	func getCellSizes(postText: String?, photoAttachment: FeedCellPhotoAttachmentViewModel?, isFullSizedPost: Bool) -> FeedCellSizes
+	func getCellSizes(postText: String?, photoAttachments: [FeedCellPhotoAttachmentViewModel], isFullSizedPost: Bool) -> FeedCellSizes
 }
 
 final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
@@ -28,7 +28,7 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
 		self.screenWidht = screenWidht
 	}
 	
-	func getCellSizes(postText: String?, photoAttachment: FeedCellPhotoAttachmentViewModel?, isFullSizedPost: Bool) -> FeedCellSizes {
+	func getCellSizes(postText: String?, photoAttachments: [FeedCellPhotoAttachmentViewModel], isFullSizedPost: Bool) -> FeedCellSizes {
 		var showMoreTextButton = false
 		let cardViewWidht = screenWidht - Constants.cardViewInsets.left - Constants.cardViewInsets.right
 
@@ -65,9 +65,15 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
 		var attachmentFrame = CGRect(origin: CGPoint(x: 0, y: attachmentTop),
 									 size: .zero)
 		
-		if let attachment = photoAttachment {
+		if let attachment = photoAttachments.first {
 			let ratio = CGFloat(attachment.height) / CGFloat(attachment.widht)
-			attachmentFrame.size = CGSize(width: cardViewWidht, height: cardViewWidht * ratio)
+			if photoAttachments.count == 1 {
+				attachmentFrame.size = CGSize(width: cardViewWidht, height: cardViewWidht * ratio)
+			} else if photoAttachments.count > 1 {
+				print("more than one photo")
+				attachmentFrame.size = CGSize(width: cardViewWidht, height: cardViewWidht * ratio)
+			}
+
 		}
 		
 		// MARK: calculating bottomView frame
