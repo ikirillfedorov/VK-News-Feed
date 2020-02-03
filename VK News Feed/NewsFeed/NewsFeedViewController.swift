@@ -80,6 +80,7 @@ extension NewsFeedViewController: UITableViewDataSource {
 			as? NewsFeedCodeCell else { return UITableViewCell(style: .default, reuseIdentifier: "cell") }
 		let cellViewModel = feedViewModel.cells[indexPath.row]
 		cell.set(viewModel: cellViewModel)
+		cell.delegate = self
 		return cell
 	}
 	
@@ -91,3 +92,12 @@ extension NewsFeedViewController: UITableViewDataSource {
 
 extension NewsFeedViewController: UITableViewDelegate {
 }
+
+extension NewsFeedViewController: NewsFeedCodeCellDelegate {
+	func revelPost(for cell: NewsFeedCodeCell) {
+		guard let indexPath = feedSceneView.tableView.indexPath(for: cell) else { return }
+		let cellViewModel = feedViewModel.cells[indexPath.row]
+		interactor?.makeRequest(request: .revealPostIds(postId: cellViewModel.postId))
+	}
+}
+

@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol NewsFeedCodeCellDelegate: class {
+	func revelPost(for cell: NewsFeedCodeCell)
+}
+
 final class NewsFeedCodeCell: UITableViewCell {
 	
 	static let reuseId = "NewsFeedCodeCell"
+	weak var delegate: NewsFeedCodeCellDelegate?
+	
 	// first layer
 	let cardView: UIView = {
 		let view = UIView()
@@ -39,6 +45,16 @@ final class NewsFeedCodeCell: UITableViewCell {
 		let imageView = WebImageView()
 		imageView.backgroundColor = UIColor(red: 227 / 255, green: 229 / 255, blue: 232 / 255, alpha: 1)
 		return imageView
+	}()
+	
+	let moreTextButton: UIButton = {
+		let button = UIButton()
+		button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+		button.setTitleColor(Colors.showMoreTextButtonTitleColor, for: .normal)
+		button.contentHorizontalAlignment = .left
+		button.contentVerticalAlignment = .center
+		button.setTitle("Показать полностью...", for: .normal)
+		return button
 	}()
 	
 	let bottomView: UIView = {
@@ -161,14 +177,30 @@ final class NewsFeedCodeCell: UITableViewCell {
 		return label
 	}()
 	
+	override func prepareForReuse() {
+		iconImageView.setImage(fromUrl: nil)
+		postImageView.setImage(fromUrl: nil)
+	}
+
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		self.backgroundColor = .clear
 		self.selectionStyle = .none
+		moreTextButton.addTarget(self, action: #selector(moreTextButtonPressed), for: .touchUpInside)
+		roundIcons()
 		makeSubViewsHierarchy()
 		setConstraints()
 	}
 	
+	@objc private func moreTextButtonPressed() {
+		delegate?.revelPost(for: self)
+	}
+	
+	private func roundIcons() {
+		iconImageView.layer.cornerRadius = Constants.topViewHeight / 2
+		iconImageView.clipsToBounds = true
+	}
+
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
@@ -186,6 +218,7 @@ final class NewsFeedCodeCell: UITableViewCell {
 		postLabel.frame = viewModel.sizes.postLabelFrame
 		postImageView.frame = viewModel.sizes.attachmentFrame
 		bottomView.frame = viewModel.sizes.bottomView
+		moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
 		
 		if let photoAttachment = viewModel.photoAttachment {
 			postImageView.setImage(fromUrl: photoAttachment.photoUrlString)
@@ -204,6 +237,7 @@ final class NewsFeedCodeCell: UITableViewCell {
 		cardView.addSubview(postLabel)
 		cardView.addSubview(postImageView)
 		cardView.addSubview(bottomView)
+		cardView.addSubview(moreTextButton)
 		// third layer on top view
 		topView.addSubview(iconImageView)
 		topView.addSubview(nameLabel)
