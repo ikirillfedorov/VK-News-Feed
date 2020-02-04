@@ -59,14 +59,7 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
 		let normalSourceId = sourcseId >= 0 ? sourcseId : -sourcseId
 		return profilesOrGroups.first { $0.id == normalSourceId }!
 	}
-	
-//	private func getPhotoAttachments(feedItem: FeedItem) -> FeedViewModel.FeedCellPhotoAttachment? {
-//		guard let photos = feedItem.attachments?.compactMap( { $0.photo } ), let firstPhoto = photos.first else { return nil }
-//		return FeedViewModel.FeedCellPhotoAttachment(photoUrlString: firstPhoto.imageBig,
-//													 widht: firstPhoto.width,
-//													 height: firstPhoto.height)
-//	}
-	
+		
 	private func getPhotoAttachments(feedItem: FeedItem) -> [FeedViewModel.FeedCellPhotoAttachment] {
 		guard let attachments = feedItem.attachments else { return [] }
 		return attachments.compactMap { (attachment) -> FeedViewModel.FeedCellPhotoAttachment? in

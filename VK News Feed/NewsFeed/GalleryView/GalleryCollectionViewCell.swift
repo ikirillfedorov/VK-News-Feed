@@ -15,8 +15,8 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
 	let cellImageView: WebImageView = {
 		let imageView = WebImageView()
 		imageView.translatesAutoresizingMaskIntoConstraints = false
-		imageView.contentMode = .scaleAspectFit
-		imageView.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+		imageView.contentMode = .scaleAspectFill
+		imageView.backgroundColor = Colors.galleryCellBGColor
 		return imageView
 	}()
 	
@@ -24,11 +24,19 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
 		super.init(frame: frame)
 		self.addSubview(cellImageView)
 		setConstraints()
-		backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		cellImageView.layer.masksToBounds = true
+		cellImageView.layer.cornerRadius = 10
+		layer.shadowRadius = 3
+		layer.shadowOpacity = 0.4
+		layer.shadowOffset = CGSize(width: 2.5, height: 4)
 	}
 	
 	override func prepareForReuse() {

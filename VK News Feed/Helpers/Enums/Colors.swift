@@ -13,4 +13,5 @@ enum Colors {
 	static let detailTextColor = UIColor(red: 129 / 255, green: 140 / 255, blue: 153 / 255, alpha: 1)
 	static let postText = UIColor(red: 235 / 255, green: 240 / 255, blue: 245 / 255, alpha: 1)
 	static let showMoreTextButtonTitleColor = UIColor(red: 102 / 255, green: 159 / 255, blue: 202 / 255, alpha: 1)
+	static let galleryCellBGColor = UIColor(red: 227 / 255, green: 229 / 255, blue: 232 / 255, alpha: 1)
 }
