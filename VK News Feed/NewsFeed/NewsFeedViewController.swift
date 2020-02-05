@@ -19,6 +19,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 	
 	private let feedSceneView = FeedSceneView()
 	private var feedViewModel = FeedViewModel(cells: [])
+	private let titleView = TitleView()
 	
 	// MARK: Setup
 	private func setup() {
@@ -49,14 +50,19 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 		self.feedSceneView.tableView.separatorStyle = .none
 		self.feedSceneView.tableView.backgroundColor = .clear
 		self.feedSceneView.backgroundColor = Colors.mainStyle
-
 		self.feedSceneView.tableView.register(UINib(nibName: "NewsFeedCell", bundle: nil),
 											  forCellReuseIdentifier: NewsFeedCell.reuseId)
 		self.feedSceneView.tableView.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
 		setup()
-		
-		
+		setupNavigationBar()
 		interactor?.makeRequest(request: .getNewsFeed)
+		interactor?.makeRequest(request: .getUser)
+	}
+	
+	private func setupNavigationBar() {
+		self.navigationController?.hidesBarsOnSwipe = true
+		self.navigationController?.navigationBar.shadowImage = UIImage()
+		self.navigationItem.titleView = titleView
 	}
 	
 	func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
@@ -64,6 +70,8 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 		case .displayNewsFeed(let feedViewModel):
 			self.feedViewModel = feedViewModel
 			self.feedSceneView.tableView.reloadData()
+		case .displayUserInfo(let userInfo):
+			titleView.set(userViewModel: userInfo)
 		}
 	}
 }
@@ -74,8 +82,6 @@ extension NewsFeedViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//		guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedCell.reuseId, for: indexPath)
-//			as? NewsFeedCell else { return UITableViewCell(style: .default, reuseIdentifier: "cell") }
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedCodeCell.reuseId, for: indexPath)
 			as? NewsFeedCodeCell else { return UITableViewCell(style: .default, reuseIdentifier: "cell") }
 		let cellViewModel = feedViewModel.cells[indexPath.row]

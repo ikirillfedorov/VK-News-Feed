@@ -20,6 +20,9 @@
 		5C51530F23E6BEEE004D994A /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C51530E23E6BEEE004D994A /* Extension+String.swift */; };
 		5C51531123E6D637004D994A /* NewsFeedCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C51531023E6D637004D994A /* NewsFeedCodeCell.swift */; };
 		5C51531323E6E393004D994A /* UIVew+Extension+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C51531223E6E393004D994A /* UIVew+Extension+Constraints.swift */; };
+		5C65BEF423EA5F10007D09BA /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C65BEF323EA5F10007D09BA /* TitleView.swift */; };
+		5C65BEF623EA5FE5007D09BA /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C65BEF523EA5FE5007D09BA /* InsetableTextField.swift */; };
+		5C65BEF823EA6872007D09BA /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C65BEF723EA6872007D09BA /* UserResponse.swift */; };
 		5C67DE6423E2081900380E24 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67DE6323E2081900380E24 /* NetworkService.swift */; };
 		5C67DE6623E2088C00380E24 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67DE6523E2088C00380E24 /* API.swift */; };
 		5C9EED1223DDA048006438DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9EED1123DDA048006438DA /* AppDelegate.swift */; };
@@ -52,6 +55,9 @@
 		5C51530E23E6BEEE004D994A /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		5C51531023E6D637004D994A /* NewsFeedCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCodeCell.swift; sourceTree = "<group>"; };
 		5C51531223E6E393004D994A /* UIVew+Extension+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVew+Extension+Constraints.swift"; sourceTree = "<group>"; };
+		5C65BEF323EA5F10007D09BA /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		5C65BEF523EA5FE5007D09BA /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
+		5C65BEF723EA6872007D09BA /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		5C67DE6323E2081900380E24 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5C67DE6523E2088C00380E24 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5C9EED0E23DDA048006438DA /* VK News Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK News Feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				5C0B1A9023E3D7840053AC14 /* FeedResponse.swift */,
+				5C65BEF723EA6872007D09BA /* UserResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -95,6 +102,7 @@
 		5C0B1A9423E3E4A40053AC14 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				5C65BEF223EA5EFB007D09BA /* TitleView */,
 				5CFF542423E7CFEF0076FACE /* GalleryView */,
 				5CDCA50A23E573BD00999661 /* Cell */,
 				5C0B1AA523E566C30053AC14 /* View */,
@@ -123,6 +131,15 @@
 				5C51531223E6E393004D994A /* UIVew+Extension+Constraints.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5C65BEF223EA5EFB007D09BA /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				5C65BEF323EA5F10007D09BA /* TitleView.swift */,
+				5C65BEF523EA5FE5007D09BA /* InsetableTextField.swift */,
+			);
+			path = TitleView;
 			sourceTree = "<group>";
 		};
 		5C9EED0523DDA048006438DA = {
@@ -335,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C65BEF623EA5FE5007D09BA /* InsetableTextField.swift in Sources */,
 				5C0B1A9123E3D7840053AC14 /* FeedResponse.swift in Sources */,
 				5CFF542823E7D1780076FACE /* GalleryCollectionViewCell.swift in Sources */,
 				5CFF542323E6E72C0076FACE /* Constants.swift in Sources */,
@@ -345,7 +363,9 @@
 				5CF30ED123E6AD7B005153BE /* FeedCellLayoutCalculator.swift in Sources */,
 				5C51530F23E6BEEE004D994A /* Extension+String.swift in Sources */,
 				5C0B1AA123E3E51C0053AC14 /* NewsFeedInteractor.swift in Sources */,
+				5C65BEF823EA6872007D09BA /* UserResponse.swift in Sources */,
 				5C9EED3723DDBAD7006438DA /* AuthViewController.swift in Sources */,
+				5C65BEF423EA5F10007D09BA /* TitleView.swift in Sources */,
 				5C67DE6423E2081900380E24 /* NetworkService.swift in Sources */,
 				5C51531123E6D637004D994A /* NewsFeedCodeCell.swift in Sources */,
 				5C0B1A9323E3DA380053AC14 /* NetworkDataFetcher.swift in Sources */,

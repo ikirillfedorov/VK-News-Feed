@@ -21,6 +21,10 @@ final class AuthService: NSObject {
 	private let vkSdk: VKSdk
 	
 	weak var delegate: AuthServiceDelegate?
+	
+	var userId: String? {
+		return VKSdk.accessToken()?.userId
+	}
 	var token: String? {
 		return VKSdk.accessToken()?.accessToken
 	}
@@ -41,7 +45,7 @@ final class AuthService: NSObject {
 			case .initialized:
 				VKSdk.authorize(scope)
 			default:
-				print("error \(error?.localizedDescription)")
+				print("error \(error?.localizedDescription ?? #function)")
 				delegate?.authServiceDidSignInFail()
 			}
 		}

@@ -52,7 +52,7 @@ final class NewsFeedCodeCell: UITableViewCell {
 	let moreTextButton: UIButton = {
 		let button = UIButton()
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-		button.setTitleColor(Colors.showMoreTextButtonTitleColor, for: .normal)
+		button.setTitleColor(Colors.showMoreTextButtonTitle, for: .normal)
 		button.contentHorizontalAlignment = .left
 		button.contentVerticalAlignment = .center
 		button.setTitle("Показать полностью...", for: .normal)
@@ -84,7 +84,7 @@ final class NewsFeedCodeCell: UITableViewCell {
 	let dateLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.textColor = Colors.detailTextColor
+		label.textColor = Colors.detailText
 		label.font = UIFont.systemFont(ofSize: 12)
 		return label
 	}()
@@ -146,7 +146,7 @@ final class NewsFeedCodeCell: UITableViewCell {
 	let likesLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.textColor = Colors.detailTextColor
+		label.textColor = Colors.detailText
 		label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 		label.lineBreakMode = .byClipping
 		return label
@@ -155,7 +155,7 @@ final class NewsFeedCodeCell: UITableViewCell {
 	let commentsLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.textColor = Colors.detailTextColor
+		label.textColor = Colors.detailText
 		label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 		label.lineBreakMode = .byClipping
 		return label
@@ -164,7 +164,7 @@ final class NewsFeedCodeCell: UITableViewCell {
 	let sharesLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.textColor = Colors.detailTextColor
+		label.textColor = Colors.detailText
 		label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 		label.lineBreakMode = .byClipping
 		return label
@@ -173,7 +173,7 @@ final class NewsFeedCodeCell: UITableViewCell {
 	let viewsLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.textColor = Colors.detailTextColor
+		label.textColor = Colors.detailText
 		label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 		label.lineBreakMode = .byClipping
 		return label

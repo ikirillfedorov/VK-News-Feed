@@ -16,7 +16,7 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
 		let imageView = WebImageView()
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.contentMode = .scaleAspectFill
-		imageView.backgroundColor = Colors.galleryCellBGColor
+		imageView.backgroundColor = Colors.galleryCell
 		return imageView
 	}()
 	
