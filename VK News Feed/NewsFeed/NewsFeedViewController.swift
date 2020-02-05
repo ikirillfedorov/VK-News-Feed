@@ -18,8 +18,13 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 	var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
 	
 	private let feedSceneView = FeedSceneView()
-	private var feedViewModel = FeedViewModel(cells: [])
 	private let titleView = TitleView()
+	private var feedViewModel = FeedViewModel(cells: [])
+	private var refreshControl: UIRefreshControl = {
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+		return refreshControl
+	}()
 	
 	// MARK: Setup
 	private func setup() {
@@ -45,6 +50,19 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		setup()
+		setupNavigationBar()
+		setupTableView()
+		interactor?.makeRequest(request: .getNewsFeed)
+		interactor?.makeRequest(request: .getUser)
+	}
+	
+	@objc private func refresh() {
+		interactor?.makeRequest(request: .getNewsFeed)
+	}
+	
+	private func setupTableView() {
+		self.feedSceneView.tableView.contentInset.top = 8
 		self.feedSceneView.tableView.delegate = self
 		self.feedSceneView.tableView.dataSource = self
 		self.feedSceneView.tableView.separatorStyle = .none
@@ -53,10 +71,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 		self.feedSceneView.tableView.register(UINib(nibName: "NewsFeedCell", bundle: nil),
 											  forCellReuseIdentifier: NewsFeedCell.reuseId)
 		self.feedSceneView.tableView.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
-		setup()
-		setupNavigationBar()
-		interactor?.makeRequest(request: .getNewsFeed)
-		interactor?.makeRequest(request: .getUser)
+		self.feedSceneView.tableView.addSubview(refreshControl)
 	}
 	
 	private func setupNavigationBar() {
@@ -70,6 +85,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 		case .displayNewsFeed(let feedViewModel):
 			self.feedViewModel = feedViewModel
 			self.feedSceneView.tableView.reloadData()
+			refreshControl.endRefreshing()
 		case .displayUserInfo(let userInfo):
 			titleView.set(userViewModel: userInfo)
 		}
