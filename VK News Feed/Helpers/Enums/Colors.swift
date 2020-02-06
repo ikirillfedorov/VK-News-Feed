@@ -15,4 +15,5 @@ enum Colors {
 	static let showMoreTextButtonTitle = UIColor(red: 102 / 255, green: 159 / 255, blue: 202 / 255, alpha: 1)
 	static let galleryCell = UIColor(red: 227 / 255, green: 229 / 255, blue: 232 / 255, alpha: 1)
 	static let titleView = UIColor(red: 238 / 255, green: 238 / 255, blue: 238 / 255, alpha: 1)
+	static let footerLabelText = UIColor(red: 161 / 255, green: 165 / 255, blue: 169 / 255, alpha: 1)
 }

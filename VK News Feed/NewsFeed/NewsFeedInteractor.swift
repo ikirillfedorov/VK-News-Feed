@@ -39,6 +39,7 @@ class NewsFeedInteractor: NewsFeedBusinessLogic {
 				self.presenter?.presentData(response: .presentNewsFeed(feed: feed, revealPostIds: revealedPostIds))
 			})
 		case .getNextBatch:
+			presenter?.presentData(response: .presentFooterLoader)
 			service?.getNextBatch(completion: { [weak self] revealedPostIds, feed in
 				guard let self = self else { return }
 				self.presenter?.presentData(response: .presentNewsFeed(feed: feed, revealPostIds: revealedPostIds))

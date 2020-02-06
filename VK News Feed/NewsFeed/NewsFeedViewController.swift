@@ -19,7 +19,8 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 	
 	private let feedSceneView = FeedSceneView()
 	private let titleView = TitleView()
-	private var feedViewModel = FeedViewModel(cells: [])
+	private let footerView = FooterView()
+	private var feedViewModel = FeedViewModel(cells: [], footerTitle: nil)
 	private var refreshControl: UIRefreshControl = {
 		let refreshControl = UIRefreshControl()
 		refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -68,6 +69,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 											  forCellReuseIdentifier: NewsFeedCell.reuseId)
 		self.feedSceneView.tableView.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
 		self.feedSceneView.tableView.addSubview(refreshControl)
+		self.feedSceneView.tableView.tableFooterView = footerView
 	}
 	
 	private func setupNavigationBar() {
@@ -82,17 +84,17 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 			self.feedViewModel = feedViewModel
 			self.feedSceneView.tableView.reloadData()
 			refreshControl.endRefreshing()
+			footerView.setTitle(feedViewModel.footerTitle)
 		case .displayUserInfo(let userInfo):
 			titleView.set(userViewModel: userInfo)
+		case .displayFooterLoader:
+			footerView.showLoader()
 		}
 	}
 	
 	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
 		if scrollView.contentOffset.y > scrollView.contentSize.height / 1.1 {
 			interactor?.makeRequest(request: .getNextBatch)
-			
-			
-			
 		}
 	}
 }
