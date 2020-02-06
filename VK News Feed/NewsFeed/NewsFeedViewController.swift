@@ -39,10 +39,6 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 		router.viewController     = viewController
 	}
 	
-	// MARK: Routing
-	
-	
-	
 	// MARK: View lifecycle
 	override func loadView() {
 		self.view = feedSceneView
@@ -88,6 +84,15 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 			refreshControl.endRefreshing()
 		case .displayUserInfo(let userInfo):
 			titleView.set(userViewModel: userInfo)
+		}
+	}
+	
+	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+		if scrollView.contentOffset.y > scrollView.contentSize.height / 1.1 {
+			interactor?.makeRequest(request: .getNextBatch)
+			
+			
+			
 		}
 	}
 }
